@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -608,11 +609,6 @@
     box-shadow:0 8px 20px rgba(60,30,80,.15);max-width:600px;margin-left:auto;margin-right:auto;
   }
   .dash-greeting{font-size:17px;font-weight:900;text-align:center;margin-bottom:12px;color:var(--ink);}
-  .dash-name-form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
-  .dash-name-input{
-    border:3px solid #FFD54F;border-radius:14px;padding:10px 14px;font-size:16px;font-weight:700;
-    text-align:center;max-width:180px;font-family:inherit;
-  }
   .dash-stats-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;}
   .dash-stat-chip{
     background:linear-gradient(135deg,#FFF3E0,#FFE0B2);border-radius:16px;padding:8px 14px;
@@ -706,8 +702,174 @@
   #screen.screen-fade-in{animation:screenFadeIn .45s ease;}
   @keyframes screenFadeIn{0%{opacity:0;transform:translateY(16px);}100%{opacity:1;transform:translateY(0);}}
 </style>
+<style>
+/* ===== Marketing site CSS (merged in) ===== */
+/* =========================================================
+   Chintu's Learning Garden — Site Shell Stylesheet
+   Colors/fonts matched exactly to the existing game app
+   ========================================================= */
+:root{
+  --yellow:#FFC93C; --blue:#29B6F6; --green:#66BB6A; --pink:#FF6FA5;
+  --orange:#FF8A3D; --purple:#9575CD; --red:#E53935; --teal:#26A69A;
+  --ink:#3A3247; --card:#FFFFFF; --bg1:#FFF6E9; --bg2:#EAF8FF;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%;}
+body{
+  margin:0;overflow-x:hidden;width:100%;font-family:'Trebuchet MS','Segoe UI','Verdana',sans-serif;color:var(--ink);
+  background:linear-gradient(180deg,var(--bg2),var(--bg1));min-height:100%;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+h1,h2,h3,h4{margin:0 0 .5em;}
+p{margin:0 0 1em;line-height:1.65;}
+.container{max-width:1180px;margin:0 auto;padding:0 20px;}
+.skip-link{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ink);padding:10px 16px;border-radius:0 0 10px 0;z-index:999;}
+.skip-link:focus{left:0;}
+:focus-visible{outline:3px dashed var(--purple);outline-offset:3px;}
+
+/* ===================== HEADER / NAV ===================== */
+.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);box-shadow:0 3px 14px rgba(58,50,71,.08);transition:box-shadow .2s;}
+.site-header.scrolled{box-shadow:0 6px 20px rgba(58,50,71,.15);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1180px;margin:0 auto;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--ink);}
+.nav-logo-mark{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--yellow),var(--orange));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 10px rgba(255,138,61,.35);}
+.nav-links{display:flex;gap:6px;list-style:none;margin:0;padding:0;align-items:center;}
+.nav-links a{padding:10px 16px;border-radius:999px;font-weight:700;font-size:15px;color:var(--ink);transition:background .2s,color .2s;}
+.nav-links a:hover,.nav-links a.active{background:var(--purple);color:#fff;}
+.nav-cta{background:linear-gradient(135deg,var(--green),#43A047);color:#fff !important;box-shadow:0 4px 12px rgba(102,187,106,.35);}
+.nav-toggle{display:none;background:none;border:none;font-size:28px;cursor:pointer;color:var(--purple);}
+@media (max-width:880px){
+  .nav-links{position:fixed;top:68px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;align-items:stretch;padding:20px;gap:8px;transform:translateX(100%);transition:transform .25s ease;overflow-y:auto;}
+  .nav-links.open{transform:translateX(0);}
+  .nav-links a{display:block;padding:14px 18px;font-size:17px;}
+  .nav-toggle{display:block;}
+}
+
+/* ===================== BUTTONS ===================== */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;padding:14px 26px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 5px 0 rgba(0,0,0,.12);}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.12);}
+.btn-primary{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#5A3200;}
+.btn-blue{background:linear-gradient(135deg,var(--blue),#1E88E5);color:#fff;}
+.btn-purple{background:linear-gradient(135deg,var(--purple),#7E57C2);color:#fff;}
+.btn-outline{background:#fff;border:3px solid var(--purple);color:var(--purple);}
+.btn-sm{padding:9px 18px;font-size:13px;box-shadow:0 3px 0 rgba(0,0,0,.12);}
+.btn-block{width:100%;justify-content:center;}
+
+/* ===================== SECTIONS ===================== */
+.section{padding:70px 0;}
+.section-tight{padding:40px 0;}
+.section-head{max-width:720px;margin:0 auto 40px;text-align:center;}
+.section-head .kicker{display:inline-block;background:#fff;color:var(--purple);font-weight:800;font-size:13px;padding:6px 16px;border-radius:999px;margin-bottom:14px;box-shadow:0 3px 10px rgba(58,50,71,.08);}
+.section-head h2{font-size:clamp(26px,4vw,36px);color:var(--ink);}
+.section-head p{color:#6b6178;font-size:16.5px;}
+.card{background:var(--card);border-radius:24px;box-shadow:0 8px 24px rgba(58,50,71,.1);}
+
+/* ===================== FOOTER ===================== */
+.site-footer{background:var(--ink);color:rgba(255,255,255,.75);padding:56px 0 24px;margin-top:40px;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+.footer-grid h4{color:#fff;font-size:15px;margin-bottom:16px;}
+.footer-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.footer-grid a{font-size:14px;color:rgba(255,255,255,.7);}
+.footer-grid a:hover{color:var(--yellow);}
+.footer-social{display:flex;gap:10px;margin-top:16px;}
+.footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:rgba(255,255,255,.55);}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;}}
+
+/* ===================== AD PLACEHOLDERS ===================== */
+.ad-slot{
+  background:repeating-linear-gradient(45deg,#F3EEFB,#F3EEFB 10px,#EDE7F8 10px,#EDE7F8 20px);
+  border:2px dashed #C9BEE8;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  color:#8a7ba3;font-weight:700;font-size:13px;margin:30px auto;text-transform:uppercase;letter-spacing:.04em;
+}
+.ad-slot-banner{max-width:970px;height:90px;}
+.ad-slot-sidebar{width:100%;max-width:300px;height:250px;}
+.ad-slot-incontent{max-width:728px;height:90px;}
+
+/* ===================== HERO (matches existing app palette) ===================== */
+.hero-band{position:relative;overflow:hidden;padding:56px 0 40px;text-align:center;}
+.hero-band h1{font-size:clamp(30px,5vw,46px);color:var(--ink);}
+.hero-band .tagline{font-size:19px;color:#6b6178;max-width:640px;margin:0 auto 26px;}
+.hero-cta-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:30px;}
+.hero-stat b{display:block;font-size:26px;color:var(--purple);}
+.hero-stat span{font-size:13px;color:#6b6178;}
+
+/* ===================== GRIDS: FEATURED / CATEGORIES / GAMES ===================== */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr;} .grid-4{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.grid-3{grid-template-columns:1fr;} .grid-4{grid-template-columns:1fr;}}
+
+.feature-card{padding:26px;text-align:center;transition:transform .18s;}
+.feature-card:hover{transform:translateY(-6px);}
+.feature-ic{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 14px;}
+.feature-card h3{font-size:17px;}
+.feature-card p{font-size:14px;color:#6b6178;margin-bottom:0;}
+
+.cat-card{padding:22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;}
+.cat-emoji{font-size:34px;}
+.cat-card h4{font-size:15px;margin:0;}
+.cat-card span{font-size:12.5px;color:#6b6178;}
+
+.game-card{overflow:hidden;display:flex;flex-direction:column;}
+.game-thumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:56px;}
+.game-body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.game-body h3{font-size:16.5px;margin-bottom:2px;}
+.game-meta-row{display:flex;gap:8px;flex-wrap:wrap;}
+.game-tag{font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;background:#F3EEFB;color:var(--purple);}
+.game-body p{font-size:13px;color:#6b6178;margin-bottom:4px;flex:1;}
+
+/* ===================== FAQ ===================== */
+.faq-item{background:#fff;border-radius:18px;box-shadow:0 4px 16px rgba(58,50,71,.08);margin-bottom:14px;overflow:hidden;}
+.faq-q{width:100%;text-align:left;padding:18px 22px;background:none;border:none;font-weight:800;font-size:15.5px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--ink);}
+.faq-icon{transition:transform .25s;}
+.faq-item.open .faq-icon{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px;}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:18px;}
+.faq-a p{font-size:14.5px;color:#6b6178;margin:0;}
+
+/* ===================== CONTENT PAGES (About/Privacy/Terms) ===================== */
+.content-page h2{font-size:24px;color:var(--purple);margin-top:36px;}
+.content-page h2:first-child{margin-top:0;}
+.content-page p, .content-page li{font-size:15.5px;color:#4a4356;}
+.content-page ul{padding-left:22px;}
+.page-hero{text-align:center;padding:50px 0 20px;}
+.page-hero h1{font-size:clamp(28px,4.5vw,40px);}
+.page-hero p{color:#6b6178;font-size:16px;max-width:600px;margin:0 auto;}
+
+/* ===================== CONTACT FORM ===================== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+@media (max-width:800px){.contact-grid{grid-template-columns:1fr;}}
+.form-field{margin-bottom:18px;}
+.form-field label{display:block;font-weight:800;font-size:14px;margin-bottom:7px;}
+.form-field input,.form-field textarea{
+  width:100%;padding:13px 15px;border-radius:14px;border:2px solid #E7DFF7;font-family:inherit;font-size:15px;
+  transition:border-color .2s;background:#fff;
+}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--purple);outline:none;}
+.form-error{color:var(--red);font-size:12.5px;font-weight:700;margin-top:5px;display:none;}
+.form-field.invalid input,.form-field.invalid textarea{border-color:var(--red);}
+.form-field.invalid .form-error{display:block;}
+.form-success{background:#E8F8EA;border:2px solid var(--green);border-radius:14px;padding:16px 18px;font-weight:700;color:#2E7D32;display:none;margin-bottom:18px;}
+.form-success.show{display:block;}
+.contact-info-card{padding:28px;}
+.contact-info-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;}
+.contact-info-ic{width:44px;height:44px;border-radius:12px;background:#F3EEFB;color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+</style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+<main id="main-content"><div id="site-pages"></div></main>
+<footer class="site-footer" id="site-footer"></footer>
+<div id="gardenApp" style="display:none;">
 
 <div class="scene-sky"></div>
 <div class="scene-sun"></div>
@@ -744,6 +906,7 @@
   <div class="face">🦊</div>
   <div class="bubble" id="mascotBubble">Hi! I'm Chintu. Tap a card below to start learning!</div>
 </div>
+</div><!-- /gardenApp -->
 
 <script>
 /* ---------------- DATA ---------------- */
@@ -1250,56 +1413,36 @@ function greetingPhrase(){
   return tod+', '+nm+'! Ready to learn today?';
 }
 
-function submitProfileName(){
-  const el = $('#nameInput');
-  const val = el ? el.value.replace(/[^a-zA-Z ]/g,'').trim().slice(0,16) : '';
-  profile.name = val || 'Friend';
-  playClick();
-  renderMenu();
-}
-
 function renderDashboardCard(){
   let html = '<div class="dashboard-card">';
-  if(!profile.name){
-    html += '<div class="dash-greeting">Hi there! What is your name?</div>';
-    html += '<div class="dash-name-form">'
-          + '<input type="text" id="nameInput" class="dash-name-input" placeholder="Your name" maxlength="16" />'
-          + '<button class="choice-btn" id="nameSubmitBtn" style="background:linear-gradient(135deg,#FFC93C,#FF8A3D);padding:10px 18px;"><span class="cicon">👋</span>Start!</button>'
-          + '</div>';
-  } else {
-    html += '<div class="dash-greeting">'+greetingEmoji()+' '+greetingPhrase()+'</div>';
-    html += '<div class="dash-stats-row">';
-    html += '<div class="dash-stat-chip">🔥 Streak: '+profile.streak+'</div>';
-    html += '<div class="dash-stat-chip">🪙 Coins: '+profile.coins+'</div>';
-    html += '<div class="dash-stat-chip">⭐ Stars: '+stars+'</div>';
-    html += '</div>';
-    html += '<div class="dash-actions-row">';
-    if(profile.lastModuleId && getModule(profile.lastModuleId)){
-      html += '<button class="dash-continue-btn" id="continueBtn" style="background:linear-gradient(135deg,#29B6F6,#1E88E5);">▶ Continue: '+profile.lastModuleTitle+'</button>';
-    }
-    if(!profile.giftClaimed){
-      html += '<button class="dash-gift-btn" id="giftBtn" style="background:linear-gradient(135deg,#EC407A,#8E24AA);">🎁 Open Gift</button>';
-    }
-    html += '</div>';
-    if(profile.recentActivity){
-      html += '<div class="dash-recent">✅ Recently completed: '+profile.recentActivity+'</div>';
-    }
-    html += '<div class="badge-shelf">';
-    BADGE_DEFS.forEach(function(b){
-      const unlocked = profile.badges.indexOf(b.id)!==-1;
-      html += '<div class="badge-chip'+(unlocked?'':' locked')+'" title="'+b.name+'">'+(unlocked?b.icon:'🔒')+'</div>';
-    });
-    html += '</div>';
+  html += '<div class="dash-greeting">'+greetingEmoji()+' '+greetingPhrase()+'</div>';
+  html += '<div class="dash-stats-row">';
+  html += '<div class="dash-stat-chip">🔥 Streak: '+profile.streak+'</div>';
+  html += '<div class="dash-stat-chip">🪙 Coins: '+profile.coins+'</div>';
+  html += '<div class="dash-stat-chip">⭐ Stars: '+stars+'</div>';
+  html += '</div>';
+  html += '<div class="dash-actions-row">';
+  if(profile.lastModuleId && getModule(profile.lastModuleId)){
+    html += '<button class="dash-continue-btn" id="continueBtn" style="background:linear-gradient(135deg,#29B6F6,#1E88E5);">▶ Continue: '+profile.lastModuleTitle+'</button>';
   }
+  if(!profile.giftClaimed){
+    html += '<button class="dash-gift-btn" id="giftBtn" style="background:linear-gradient(135deg,#EC407A,#8E24AA);">🎁 Open Gift</button>';
+  }
+  html += '</div>';
+  if(profile.recentActivity){
+    html += '<div class="dash-recent">✅ Recently completed: '+profile.recentActivity+'</div>';
+  }
+  html += '<div class="badge-shelf">';
+  BADGE_DEFS.forEach(function(b){
+    const unlocked = profile.badges.indexOf(b.id)!==-1;
+    html += '<div class="badge-chip'+(unlocked?'':' locked')+'" title="'+b.name+'">'+(unlocked?b.icon:'🔒')+'</div>';
+  });
+  html += '</div>';
   html += '</div>';
   return html;
 }
 
 function bindDashboardEvents(){
-  const nameBtn = $('#nameSubmitBtn');
-  if(nameBtn) nameBtn.addEventListener('click', submitProfileName);
-  const nameInputEl = $('#nameInput');
-  if(nameInputEl) nameInputEl.addEventListener('keydown', function(e){ if(e.key==='Enter'){ submitProfileName(); } });
   const contBtn = $('#continueBtn');
   if(contBtn) contBtn.addEventListener('click', function(){ playClick(); openModule(profile.lastModuleId); });
   const giftBtn = $('#giftBtn');
@@ -5632,6 +5775,499 @@ if(screenEl){
 }
 
 renderMenu();
+</script>
+<script>
+
+/* =========================================================
+   MARKETING SITE — embedded in the same file as the game
+   Toggles visibility with #gardenApp via siteGo('play')
+   ========================================================= */
+var SITE = { page: 'home' };
+
+function siteGo(page){
+  SITE.page = page;
+  siteRender();
+  window.scrollTo(0,0);
+  return false;
+}
+
+function siteRender(){
+  var header = document.getElementById('site-header');
+  var pages = document.getElementById('site-pages');
+  var footer = document.getElementById('site-footer');
+  var gardenApp = document.getElementById('gardenApp');
+
+  if(SITE.page === 'play'){
+    header.style.display = 'none';
+    pages.style.display = 'none';
+    footer.style.display = 'none';
+    gardenApp.style.display = '';
+    return;
+  }
+  header.style.display = '';
+  pages.style.display = '';
+  footer.style.display = '';
+  gardenApp.style.display = 'none';
+
+  renderSiteHeaderInline(SITE.page);
+  pages.innerHTML = (SITE_PAGES[SITE.page] || SITE_PAGES.home)();
+  renderSiteFooterInline();
+  bindSitePageScripts(SITE.page);
+}
+
+function renderSiteHeaderInline(activePage){
+  var items = [
+    {id:'home', label:'Home'},
+    {id:'games', label:'Games'},
+    {id:'about', label:'About'},
+    {id:'contact', label:'Contact'},
+    {id:'privacy', label:'Privacy Policy'},
+    {id:'terms', label:'Terms of Use'}
+  ];
+  var linksHtml = items.map(function(it){
+    var cls = it.id === activePage ? 'active' : '';
+    var aria = it.id === activePage ? ' aria-current="page"' : '';
+    return '<li><a href="#" onclick="return siteGo(\''+it.id+'\')" class="'+cls+'"'+aria+'>'+it.label+'</a></li>';
+  }).join('');
+  var html = ''
+    +'<div class="nav-row">'
+    +'  <a href="#" onclick="return siteGo(\'home\')" class="nav-logo" aria-label="Chintu\'s Learning Garden — Home"><span class="nav-logo-mark" aria-hidden="true">🦊</span> Chintu\'s Learning Garden</a>'
+    +'  <nav aria-label="Main navigation">'
+    +'    <ul class="nav-links" id="mainNavLinks">'
+    +       linksHtml
+    +'      <li><a href="#" onclick="return siteGo(\'play\')" class="nav-cta">🎮 Play Now</a></li>'
+    +'    </ul>'
+    +'  </nav>'
+    +'  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNavLinks">☰</button>'
+    +'</div>';
+  document.getElementById('site-header').innerHTML = html;
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('mainNavLinks');
+  toggle.onclick = function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.textContent = open ? '✕' : '☰';
+  };
+  window.onscroll = function(){
+    document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
+  };
+}
+
+function renderSiteFooterInline(){
+  var html = ''
+    +'<div class="container">'
+    +'  <div class="footer-grid">'
+    +'    <div>'
+    +'      <div class="nav-logo" style="color:#fff;margin-bottom:14px;"><span class="nav-logo-mark" aria-hidden="true">🦊</span> Chintu\'s Learning Garden</div>'
+    +'      <p style="font-size:14px;max-width:280px;">A colourful, safe learning world with 36+ games for Nursery, LKG and UKG children — letters, numbers, Hindi, stories, and more.</p>'
+    +'      <div class="footer-social" aria-label="Social media links">'
+    +'        <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a>'
+    +'      </div>'
+    +'    </div>'
+    +'    <div><h4>Quick Links</h4><ul>'
+    +'      <li><a href="#" onclick="return siteGo(\'home\')">Home</a></li>'
+    +'      <li><a href="#" onclick="return siteGo(\'games\')">Games</a></li>'
+    +'      <li><a href="#" onclick="return siteGo(\'about\')">About Us</a></li>'
+    +'      <li><a href="#" onclick="return siteGo(\'contact\')">Contact</a></li>'
+    +'    </ul></div>'
+    +'    <div><h4>Legal</h4><ul>'
+    +'      <li><a href="#" onclick="return siteGo(\'privacy\')">Privacy Policy</a></li>'
+    +'      <li><a href="#" onclick="return siteGo(\'terms\')">Terms of Use</a></li>'
+    +'    </ul></div>'
+    +'    <div><h4>Get in Touch</h4><ul>'
+    +'      <li><a href="mailto:hello@chintuslearninggarden.com">✉️ hello@chintuslearninggarden.com</a></li>'
+    +'      <li><a href="#" onclick="return siteGo(\'play\')">🎮 Start Playing Free</a></li>'
+    +'    </ul></div>'
+    +'  </div>'
+    +'  <div class="footer-bottom">'
+    +'    <span>© '+new Date().getFullYear()+' Chintu\'s Learning Garden. All rights reserved.</span>'
+    +'    <span>Made with 💛 for little learners everywhere.</span>'
+    +'  </div>'
+    +'</div>';
+  document.getElementById('site-footer').innerHTML = html;
+}
+
+/* ---- All 36 games (cards data) ---- */
+var GAMES = [
+  {name:'ABC Letters', emoji:'🔤', age:'3-5 yrs', level:'Easy', skills:'Letters, Phonics', desc:'Learn every letter A-Z with pictures, sounds and quizzes.', anchor:'guide-alphabet'},
+  {name:'हिंदी वर्णमाला', emoji:'क', age:'4-6 yrs', level:'Medium', skills:'Hindi Letters', desc:'Learn Hindi consonants with matching pictures and words.'},
+  {name:'हिंदी स्वर', emoji:'अ', age:'3-5 yrs', level:'Easy', skills:'Hindi Vowels', desc:'Learn the ten Hindi vowels with sound and picture matching.'},
+  {name:'Colors', emoji:'🎨', age:'2-4 yrs', level:'Easy', skills:'Colour Names', desc:'Learn ten colour names through bright swatches and quizzes.'},
+  {name:'Fruits', emoji:'🍉', age:'2-4 yrs', level:'Easy', skills:'Vocabulary', desc:'Meet ten yummy fruits with names and pictures.'},
+  {name:'Vegetables', emoji:'🥕', age:'2-4 yrs', level:'Easy', skills:'Vocabulary', desc:'Learn ten healthy vegetables the fun way.'},
+  {name:'Weekdays', emoji:'📅', age:'3-5 yrs', level:'Easy', skills:'Time Concepts', desc:'Learn the seven days of the week in order.'},
+  {name:'Months', emoji:'🗓️', age:'4-6 yrs', level:'Medium', skills:'Time Concepts', desc:'Learn all twelve months with seasonal pictures.'},
+  {name:'Shapes', emoji:'🔺', age:'2-4 yrs', level:'Easy', skills:'Geometry Basics', desc:'Learn eight shapes with rotating animations and quizzes.'},
+  {name:'Counting', emoji:'🔢', age:'2-4 yrs', level:'Easy', skills:'Counting 1-10', desc:'Count stars and objects from one to ten.'},
+  {name:'Maths Tables', emoji:'✖️', age:'5-6 yrs', level:'Hard', skills:'Multiplication', desc:'Practise multiplication tables 1 to 10 with quizzes.'},
+  {name:'Count to 100', emoji:'💯', age:'4-6 yrs', level:'Medium', skills:'Number Sense', desc:'Explore a full 1-100 number grid, tap to hear each number.'},
+  {name:'ABC Formats', emoji:'🔡', age:'4-6 yrs', level:'Medium', skills:'Handwriting Prep', desc:'Learn uppercase, lowercase and cursive letter forms.'},
+  {name:'English Talk', emoji:'💬', age:'4-6 yrs', level:'Medium', skills:'Spoken English', desc:'Practise 100 everyday English phrases and greetings.'},
+  {name:'Color Fun', emoji:'🖌️', age:'2-6 yrs', level:'Easy', skills:'Creativity, Fine Motor', desc:'Paint 50 pictures with 18 crayon colours.', anchor:'guide-coloring'},
+  {name:'हिंदू देवी-देवता', emoji:'🙏', age:'3-6 yrs', level:'Easy', skills:'Culture, Hindi', desc:'Meet twelve deities with Hindi names and chants.'},
+  {name:'Magic Corner', emoji:'🎩', age:'3-6 yrs', level:'Easy', skills:'Curiosity, Wonder', desc:'Three delightful, screen-based magic tricks.'},
+  {name:'Musical Fun', emoji:'🎵', age:'2-6 yrs', level:'Easy', skills:'Music, Rhythm', desc:'Play piano, violin, flute, tabla and dholak.', anchor:'guide-musical'},
+  {name:'🧠 Brain Development', emoji:'🧠', age:'4-6 yrs', level:'Medium', skills:'Memory, Logic', desc:'Six memory, matching and logic mini-games in one zone.', anchor:'guide-brain'},
+  {name:'Count to 500', emoji:'🎯', age:'5-6 yrs', level:'Hard', skills:'Number Sense', desc:'A big, colourful 1-500 number chart, tap to hear any number.'},
+  {name:'Tables 2 to 20', emoji:'🧮', age:'5-6 yrs', level:'Hard', skills:'Multiplication', desc:'All multiplication tables from 2 to 20 on one poster.'},
+  {name:'Numbers Learning', emoji:'🔢', age:'4-6 yrs', level:'Medium', skills:'Maths Fundamentals', desc:'Count, compare and calculate with fruits, stars and candy.', anchor:'guide-numbers'},
+  {name:'🐶 Animal Games', emoji:'🐶', age:'3-6 yrs', level:'Easy', skills:'Animal Knowledge', desc:'Guess animal sounds in this growing game collection.', anchor:'guide-animalgames'},
+  {name:'Story Time', emoji:'📖', age:'2-6 yrs', level:'Easy', skills:'Listening, Morals', desc:'100 short read-aloud stories across ten categories.', anchor:'guide-story'},
+  {name:'English Learning Corner', emoji:'🇬🇧', age:'2-6 yrs', level:'Easy', skills:'English Rhymes & Stories', desc:'Classic English rhymes, stories and poems, read aloud.'},
+  {name:'हिंदी लर्निंग कॉर्नर', emoji:'🇮🇳', age:'2-6 yrs', level:'Easy', skills:'Hindi Rhymes & Stories', desc:'Traditional Hindi rhymes, stories and poems, read aloud.', anchor:'guide-hicorner'},
+  {name:'Mouse Practice', emoji:'🖱️', age:'2-4 yrs', level:'Easy', skills:'Hand-Eye Coordination', desc:'50 gentle click, pop and drag games for first-time mouse users.', anchor:'guide-mouse'},
+  {name:'Body Parts', emoji:'🧑', age:'2-4 yrs', level:'Easy', skills:'Self-Awareness', desc:'Learn the names of body parts with pictures and sounds.'},
+  {name:'My Feelings', emoji:'😊', age:'3-5 yrs', level:'Easy', skills:'Emotional Awareness', desc:'Learn to recognise and name ten different emotions.'},
+  {name:'Family Members', emoji:'👨‍👩‍👧‍👦', age:'2-4 yrs', level:'Easy', skills:'Social Awareness', desc:'Meet and name every member of the family.'},
+  {name:'Vehicles', emoji:'🚗', age:'2-4 yrs', level:'Easy', skills:'Vocabulary', desc:'Learn land, water and air vehicles.'},
+  {name:'Birds', emoji:'🦜', age:'3-5 yrs', level:'Easy', skills:'Nature Awareness', desc:'Meet ten feathery friends from parrots to penguins.'},
+  {name:'Sea Animals', emoji:'🐬', age:'3-5 yrs', level:'Easy', skills:'Nature Awareness', desc:'Explore ten creatures living under the ocean.'},
+  {name:'Good Habits', emoji:'🪥', age:'3-5 yrs', level:'Easy', skills:'Life Skills', desc:'Learn healthy daily habits like brushing and sharing.'},
+  {name:'Animals', emoji:'🦁', age:'2-4 yrs', level:'Easy', skills:'Vocabulary', desc:'Meet wild and friendly animals from around the world.'},
+  {name:'Arcade Games', emoji:'🎮', age:'4-6 yrs', level:'Medium', skills:'Reflexes, Logic', desc:'Fast, fun timed challenges including Letter Hunt and Number Race.'}
+];
+
+var SITE_PAGES = {};
+
+SITE_PAGES.home = function(){
+  return ''
++'<section class="hero-band container">'
++'  <h1>Learning Feels Like Play at <span style="color:var(--purple);">Chintu\'s Learning Garden</span> 🦊</h1>'
++'  <p class="tagline">A free, colourful world of 36+ games that helps Nursery, LKG and UKG children learn letters, numbers, Hindi, shapes, stories and more — one giggle at a time.</p>'
++'  <div class="hero-cta-row">'
++'    <a href="#" onclick="return siteGo(\'play\')" class="btn btn-primary">🎮 Start Playing Free</a>'
++'    <a href="#" onclick="return siteGo(\'games\')" class="btn btn-outline">See All Games</a>'
++'  </div>'
++'  <div class="hero-stats">'
++'    <div class="hero-stat"><b class="js-counter" data-target="36" data-suffix="+">0</b><span>Learning games</span></div>'
++'    <div class="hero-stat"><b class="js-counter" data-target="2" data-suffix=" Languages">0</b><span>English &amp; Hindi</span></div>'
++'    <div class="hero-stat"><b class="js-counter" data-target="100" data-suffix="+">0</b><span>Stories &amp; rhymes</span></div>'
++'    <div class="hero-stat"><b class="js-counter" data-target="0" data-suffix="₹">0</b><span>Always free</span></div>'
++'  </div>'
++'</section>'
++'<div class="ad-slot ad-slot-banner container" role="complementary" aria-label="Advertisement">Advertisement</div>'
++'<section class="section"><div class="container">'
++'  <div class="section-head reveal"><span class="kicker">Play &amp; Learn</span><h2>Featured Learning Games</h2><p>A hand-picked mix of our most-loved games — perfect for a first visit to the Garden.</p></div>'
++'  <div class="grid-4">'
++'    <div class="card game-card reveal"><div class="game-thumb" style="background:linear-gradient(135deg,#FFF3D6,#FFC93C);" aria-hidden="true">🔤</div><div class="game-body"><h3>ABC Letters</h3><p>Learn every letter from A to Z with pictures, sounds and fun quizzes.</p><a href="#" onclick="return siteGo(\'play\')" class="btn btn-blue btn-sm">Play Now</a></div></div>'
++'    <div class="card game-card reveal"><div class="game-thumb" style="background:linear-gradient(135deg,#E3F2FD,#29B6F6);" aria-hidden="true">🔢</div><div class="game-body"><h3>Numbers Learning</h3><p>Count, compare and calculate with fruits, stars and candy.</p><a href="#" onclick="return siteGo(\'play\')" class="btn btn-blue btn-sm">Play Now</a></div></div>'
++'    <div class="card game-card reveal"><div class="game-thumb" style="background:linear-gradient(135deg,#FFE0EC,#FF6FA5);" aria-hidden="true">🧠</div><div class="game-body"><h3>Brain Development</h3><p>Six memory, matching and puzzle games that build sharp little minds.</p><a href="#" onclick="return siteGo(\'play\')" class="btn btn-blue btn-sm">Play Now</a></div></div>'
++'    <div class="card game-card reveal"><div class="game-thumb" style="background:linear-gradient(135deg,#E8F5E9,#66BB6A);" aria-hidden="true">📖</div><div class="game-body"><h3>Story Time</h3><p>100 short, sweet stories with morals, read aloud with one tap.</p><a href="#" onclick="return siteGo(\'play\')" class="btn btn-blue btn-sm">Play Now</a></div></div>'
++'  </div>'
++'  <div style="text-align:center;margin-top:30px;"><a href="#" onclick="return siteGo(\'games\')" class="btn btn-purple">View All 36 Games →</a></div>'
++'</div></section>'
++'<section class="section" style="background:#fff;"><div class="container">'
++'  <div class="section-head reveal"><span class="kicker">Explore</span><h2>Learning Categories</h2><p>Every game is grouped so parents can pick exactly the skill their child needs to practise today.</p></div>'
++'  <div class="grid-4">'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">🔤</span><h4>Letters &amp; Language</h4><span>English + Hindi alphabet, sentences, tracing</span></div>'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">🔢</span><h4>Numbers &amp; Maths</h4><span>Counting, tables, comparisons, addition</span></div>'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">🎨</span><h4>Colours &amp; Shapes</h4><span>Colour names, sorting, geometric shapes</span></div>'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">🐾</span><h4>Animals &amp; Nature</h4><span>Animals, birds, sea creatures, sounds</span></div>'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">🧠</span><h4>Brain Games</h4><span>Memory match, odd-one-out, logic puzzles</span></div>'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">📖</span><h4>Stories &amp; Rhymes</h4><span>English and Hindi stories, poems, rhymes</span></div>'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">🖱️</span><h4>Mouse Practice</h4><span>50 gentle games that build early computer skills</span></div>'
++'    <div class="card cat-card reveal"><span class="cat-emoji" aria-hidden="true">🎵</span><h4>Music &amp; Fun</h4><span>Piano, tabla, magic tricks, colouring</span></div>'
++'  </div>'
++'</div></section>'
++'<div class="ad-slot ad-slot-incontent container" role="complementary" aria-label="Advertisement">Advertisement</div>'
++'<section class="section"><div class="container">'
++'  <div class="section-head reveal"><span class="kicker">Trusted by Families</span><h2>Why Choose Chintu\'s Learning Garden</h2><p>We built this Garden the way we\'d want a learning app to feel for our own children — warm, safe and genuinely fun.</p></div>'
++'  <div class="grid-3">'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#FFF3D6;" aria-hidden="true">🎯</div><h3>Made for Ages 2-6</h3><p>Every game, button and animation is sized and paced for little hands and short attention spans.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#E3F2FD;" aria-hidden="true">🗣️</div><h3>English &amp; Hindi Together</h3><p>Bilingual content side by side, so children build vocabulary in both languages naturally.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#FFE0EC;" aria-hidden="true">🔊</div><h3>Every Word Read Aloud</h3><p>Stories, rhymes and words all come with gentle voice narration — no reading required yet.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#E8F5E9;" aria-hidden="true">🏆</div><h3>Stars, Coins &amp; Badges</h3><p>A friendly reward system keeps children motivated without ever feeling like pressure.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#F3EEFB;" aria-hidden="true">🛡️</div><h3>Safe &amp; Distraction-Free</h3><p>No chat, no strangers, no violent content — just learning games in a walled garden.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#FFF0E0;" aria-hidden="true">💛</div><h3>Always Free to Play</h3><p>We believe early learning tools shouldn\'t sit behind a paywall for any family.</p></div>'
++'  </div>'
++'</div></section>'
++'<section class="section" style="background:#fff;"><div class="container" style="max-width:820px;">'
++'  <div class="section-head reveal"><span class="kicker">Why It Works</span><h2>The Benefits of Educational Games for Young Children</h2></div>'
++'  <div class="content-page reveal">'
++'    <p>Play is not a break from learning for a young child — it <em>is</em> how young children learn. Decades of early-childhood research agree that children between two and six years old absorb language, numbers, shapes and social skills far more effectively through playful, repeated, low-pressure activities than through formal instruction. That is the entire idea behind Chintu\'s Learning Garden: every "game" is quietly teaching something, while feeling to the child like nothing more than fun.</p>'
++'    <p>Educational games offer a few things that traditional worksheets simply cannot. First, they give <strong>instant, positive feedback</strong> — a burst of confetti or a cheerful "Well done!" the moment a child taps the right answer, which keeps motivation high even after a wrong guess. Second, they allow <strong>safe repetition</strong>. A three-year-old might need to see the letter "B" thirty times before it truly sticks, and a game never gets tired of showing it again, without the frustration a parent might understandably feel repeating the same flashcard for the tenth time. Third, games introduce <strong>gentle challenge and choice</strong> — easy, medium and tough levels let a child pick their own pace, which builds confidence rather than anxiety.</p>'
++'    <p>There is also a quieter benefit that matters just as much: screen time spent on thoughtful educational games is fundamentally different from passive video watching. When a child taps, drags, listens and answers, they are actively engaged — using memory, attention, fine motor control and decision-making all at once. That is why we designed every game in the Garden, from Balloon Pop to Story Time, to require an active response rather than simply displaying content for a child to watch.</p>'
++'  </div>'
++'</div></section>'
++'<section class="section"><div class="container">'
++'  <div class="section-head reveal"><span class="kicker">Skill Building</span><h2>Learning Skills Your Child Will Practise</h2><p>Every game maps to a real developmental skill — here\'s what\'s growing behind the giggles.</p></div>'
++'  <div class="grid-4">'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#FFF3D6;" aria-hidden="true">🔤</div><h3>Language &amp; Literacy</h3><p>Letter recognition, phonics, vocabulary and early sentence building.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#E3F2FD;" aria-hidden="true">🔢</div><h3>Number Sense</h3><p>Counting, comparing, simple addition and subtraction through visuals.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#FFE0EC;" aria-hidden="true">🖐️</div><h3>Hand-Eye Coordination</h3><p>Clicking, dragging and tracing build the fine motor control needed for writing.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#E8F5E9;" aria-hidden="true">🧩</div><h3>Memory &amp; Logic</h3><p>Matching pairs, spotting patterns and solving simple puzzles.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#F3EEFB;" aria-hidden="true">🎨</div><h3>Creativity</h3><p>Colouring, painting and imaginative story listening.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#FFF0E0;" aria-hidden="true">💬</div><h3>Bilingual Confidence</h3><p>Comfort moving between English and Hindi vocabulary.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#E0F7FA;" aria-hidden="true">❤️</div><h3>Emotional Awareness</h3><p>Naming feelings, good habits and family relationships.</p></div>'
++'    <div class="card feature-card reveal"><div class="feature-ic" style="background:#FCE4EC;" aria-hidden="true">🕒</div><h3>Focus &amp; Patience</h3><p>Short, structured rounds build attention span gradually.</p></div>'
++'  </div>'
++'</div></section>'
++'<section class="section" style="background:#fff;"><div class="container" style="max-width:820px;">'
++'  <div class="section-head reveal"><span class="kicker">For Grown-Ups</span><h2>Information for Parents</h2></div>'
++'  <div class="content-page reveal">'
++'    <p>We know parents are the ones deciding whether to hand over a device, so we want to be upfront about how Chintu\'s Learning Garden works. The site runs entirely in your browser — there is no account to create, no personal information required from your child, and no chat or messaging features of any kind. Your child simply opens a game and starts playing.</p>'
++'    <p>Every activity is designed to be completed in short bursts of two to ten minutes, which fits naturally into the attention span of a Nursery, LKG or UKG-aged child. We recommend sitting with your child for their first few visits — many games use voice narration, and children often enjoy repeating words out loud together with a parent. After that, most children are able to navigate the colourful home screen entirely on their own.</p>'
++'    <p>If you\'d like to understand exactly what information this site collects (very little, and never anything personal from a child), please read our <a href="#" onclick="return siteGo(\'privacy\')">Privacy Policy</a>. And if you ever have a question, suggestion, or a game idea from your own little one, our <a href="#" onclick="return siteGo(\'contact\')">Contact page</a> is always open.</p>'
++'  </div>'
++'</div></section>'
++'<section class="section"><div class="container" style="max-width:760px;">'
++'  <div class="section-head reveal"><span class="kicker">Questions</span><h2>Frequently Asked Questions</h2></div>'
++'  <div class="reveal">'
++'    <div class="faq-item"><button class="faq-q" aria-expanded="false">Is Chintu\'s Learning Garden really free? <span class="faq-icon" aria-hidden="true">▾</span></button><div class="faq-a"><p>Yes — every game, story and rhyme on this site is completely free to play, with no sign-up and no hidden paywalls.</p></div></div>'
++'    <div class="faq-item"><button class="faq-q" aria-expanded="false">What age group is this website designed for? <span class="faq-icon" aria-hidden="true">▾</span></button><div class="faq-a"><p>The Garden is built for children roughly aged 2 to 6 — Nursery, LKG and UKG level — though older siblings often enjoy the games too.</p></div></div>'
++'    <div class="faq-item"><button class="faq-q" aria-expanded="false">Does my child need to know how to read? <span class="faq-icon" aria-hidden="true">▾</span></button><div class="faq-a"><p>No. Every game uses pictures, colours and read-aloud narration, so pre-readers can enjoy and learn from every activity independently.</p></div></div>'
++'    <div class="faq-item"><button class="faq-q" aria-expanded="false">Is the website available in Hindi? <span class="faq-icon" aria-hidden="true">▾</span></button><div class="faq-a"><p>Yes — we have a dedicated Hindi Learning Corner along with Hindi alphabet, stories, rhymes and poems throughout the site.</p></div></div>'
++'    <div class="faq-item"><button class="faq-q" aria-expanded="false">Do I need to download an app? <span class="faq-icon" aria-hidden="true">▾</span></button><div class="faq-a"><p>No download needed — everything runs directly in your web browser on a phone, tablet or computer.</p></div></div>'
++'    <div class="faq-item"><button class="faq-q" aria-expanded="false">Is it safe for my child to use without supervision? <span class="faq-icon" aria-hidden="true">▾</span></button><div class="faq-a"><p>The site has no chat, ads targeted at children, or external links inside the games themselves, making it safe for independent play — though we always recommend age-appropriate supervision.</p></div></div>'
++'  </div>'
++'</div></section>'
++'<div class="ad-slot ad-slot-banner container" role="complementary" aria-label="Advertisement">Advertisement</div>';
+};
+
+SITE_PAGES.games = function(){
+  var grid = GAMES.map(function(g){
+    var guideLink = g.anchor ? '<a href="#'+g.anchor+'" class="btn btn-outline btn-sm" style="margin-top:6px;">Read Guide</a>' : '';
+    return '<div class="card game-card">'
+      + '<div class="game-thumb" style="background:linear-gradient(135deg,#F3EEFB,#E0D6F5);" aria-hidden="true">'+g.emoji+'</div>'
+      + '<div class="game-body">'
+      + '  <h3>'+g.name+'</h3>'
+      + '  <div class="game-meta-row"><span class="game-tag">👶 '+g.age+'</span><span class="game-tag">⭐ '+g.level+'</span></div>'
+      + '  <div class="game-meta-row"><span class="game-tag" style="background:#E8F5E9;color:#2E7D32;">🎯 '+g.skills+'</span></div>'
+      + '  <p>'+g.desc+'</p>'
+      + '  <a href="#" onclick="return siteGo(\'play\')" class="btn btn-blue btn-sm" aria-label="Play '+g.name+'">▶ Play Now</a>'
+      +    guideLink
+      + '</div></div>';
+  }).join('');
+  return ''
++'<section class="page-hero container"><h1>All Learning Games</h1><p>36+ free games for Nursery, LKG and UKG children — pick one below and start playing instantly.</p></section>'
++'<div class="ad-slot ad-slot-banner container" role="complementary" aria-label="Advertisement">Advertisement</div>'
++'<section class="section-tight"><div class="container"><div class="grid-4" aria-label="List of all learning games">'+grid+'</div></div></section>'
++'<section class="section" style="background:#fff;"><div class="container" style="max-width:820px;">'
++'  <div class="section-head reveal"><span class="kicker">Game Guides</span><h2>A Closer Look at Our Most-Played Games</h2><p>Here\'s exactly what happens inside ten of our favourite games — what your child will see, do, and learn.</p></div>'
++'  <article class="content-page reveal" id="guide-alphabet"><h2>🔤 ABC Letters</h2>'
++'    <p><strong>About this game:</strong> ABC Letters is the very first stop for most children in the Garden. It introduces all 26 English letters, from A to Z, each paired with a bright picture and a simple word — "A is for Apple," "B is for Ball," and so on. Every letter can be tapped to hear both the letter sound and the full word spoken aloud, helping children connect the shape of a letter with how it sounds long before they can read on their own. The letters are shown in large, rounded, high-contrast type designed to be easy for a young child\'s eyes to scan, and each one is paired with a cheerful, recognisable illustration rather than an abstract symbol, so the association between letter and object forms quickly and naturally.</p>'
++'    <p><strong>How to play:</strong> In Learn mode, children browse through the alphabet at their own pace, tapping any letter to see it enlarge with a cheerful animation and hear it read aloud in a warm, clear voice. In Quiz mode, a picture appears and your child chooses the matching letter from a small set of options — get it right and stars and confetti appear immediately; get it wrong and Chintu the fox gently encourages another try rather than marking a "failure." There is also an Alphabet Song mode where each letter lights up in sequence while a sing-along tune plays, and a Missing Letter game where children fill in a gap in a short letter sequence, such as A, B, _, D.</p>'
++'    <p><strong>Skills developed:</strong> Letter recognition, letter-sound association, early phonics, vocabulary building, visual matching, and the fine motor accuracy needed to tap a specific target on screen — all foundational for later reading readiness.</p>'
++'    <p><strong>Why children love it:</strong> The instant sound effects, the big colourful letters, and the sense of "I got it right!" keep children coming back to this game again and again, often repeating the whole alphabet several times in one sitting without ever being asked to, simply because each tap feels rewarding.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-numbers"><h2>🔢 Numbers Learning</h2>'
++'    <p><strong>About this game:</strong> Numbers Learning takes children from simply reciting numbers in order to genuinely understanding what quantity means. Numbers 1 to 10 are shown as large digits alongside a matching row of fruits, stars or candies that a child can choose between — so "5" is not just a symbol, it is visibly five apples sitting side by side, ready to be counted with a fingertip. This visual-first approach is one of the most well-supported methods in early numeracy education, because it builds true number sense rather than rote memorisation of a counting sequence.</p>'
++'    <p><strong>How to play:</strong> The Learn section lets children switch between fruit, star and candy themes while browsing numbers, tapping any number to hear it spoken aloud alongside its name. The Games section then mixes in short, timed rounds covering missing numbers in a sequence, what number comes before or after a given number, which of two numbers is bigger or smaller, simple addition and subtraction shown with pictures rather than only digits, and arranging a jumbled set of numbers in order — with a hint button always on hand that removes one wrong option if a child gets stuck. A separate Number Tracing section lets children practise writing each digit by finger-tracing a large dotted outline.</p>'
++'    <p><strong>Skills developed:</strong> Number recognition, one-to-one counting, quantity comparison ("greater than" and "less than"), early addition and subtraction, sequencing, and pre-writing number formation.</p>'
++'    <p><strong>Why children love it:</strong> Turning maths into pictures of candy and stars removes all the intimidation from numbers — children often ask to "play the candy counting game" without ever realising they are practising arithmetic along the way.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-brain"><h2>🧠 Brain Development</h2>'
++'    <p><strong>About this game:</strong> This is our dedicated puzzle zone, bringing together six different brain games in one place: Shape Fit, Memory Match, Odd One Out, Balloon Pop, Missing Letter and Color Sorting. Each one trains a slightly different kind of thinking, from visual memory to logical reasoning to quick decision-making, giving children a well-rounded cognitive workout disguised entirely as play. We designed this section specifically for children who have already grown comfortable with the simpler flashcard-style games elsewhere in the Garden and are ready for a slightly bigger challenge.</p>'
++'    <p><strong>How to play:</strong> Every game inside Brain Development offers Easy, Medium and Tough difficulty levels, a visible countdown timer that adds gentle urgency without real pressure, and a Hint button that narrows down the choices whenever a child feels stuck. Memory Match asks children to flip cards two at a time and remember where matching pairs are hiding; Odd One Out asks them to spot which of several pictures doesn\'t belong to the group; Shape Fit asks them to match a shape silhouette to the correct coloured outline from several options; Balloon Pop asks them to click the one correct floating balloon before it drifts off-screen.</p>'
++'    <p><strong>Skills developed:</strong> Short-term memory, visual discrimination, logical reasoning, categorisation, pattern recognition, and the ability to work calmly and accurately under a light, encouraging time limit.</p>'
++'    <p><strong>Why children love it:</strong> The sheer variety keeps things fresh — just as one puzzle type starts to feel easy, a completely different one is waiting, and every completed level ends with a satisfying badge, star shower and cheer from Chintu.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-story"><h2>📖 Story Time</h2>'
++'    <p><strong>About this game:</strong> Story Time is a library of 100 short stories, sorted into ten cheerful categories such as Animal Friends, Kindness &amp; Sharing, Brave Little Heroes, Family Time, Nature &amp; Seasons, Silly &amp; Funny, Magic &amp; Wonder, Good Habits, Adventure Tales, and Festival Fun. Each story is only a few sentences long — perfectly sized for a young child\'s attention span — and ends with a simple, clear moral that a parent can talk through with their child afterwards if they wish. The stories draw on gentle, familiar themes: a kind elephant helping a stuck friend, a clever crow solving a problem, or a brave little mouse standing up to someone bigger.</p>'
++'    <p><strong>How to play:</strong> Children browse the story gallery by category, each shown with its own small emoji icon and title, then tap any story to open it in a large, easy-to-read pop-up window. Pressing the "Read Aloud" button has the entire story narrated aloud from start to finish in a warm, storytelling voice, while arrow buttons on either side of the screen let children move smoothly to the next or previous story without ever needing to return to the main gallery.</p>'
++'    <p><strong>Skills developed:</strong> Listening comprehension, vocabulary growth, understanding of cause and effect, early moral reasoning, sequencing of a simple narrative, and a growing love of stories that supports later independent reading.</p>'
++'    <p><strong>Why children love it:</strong> Bite-sized stories with a gentle life lesson and a friendly read-aloud voice feel like a bedtime story a child can enjoy at any time of day, and because there are one hundred of them, a child can explore a new one daily for months without repeating.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-mouse"><h2>🖱️ Mouse Practice</h2>'
++'    <p><strong>About this game:</strong> Many children today reach for a touchscreen, mouse, or trackpad before they have ever needed fine motor control for a cursor-based screen. Mouse Practice is a dedicated zone of 50 simple activities — organised into three categories, Pop &amp; Catch, Find &amp; Click, and Drag &amp; Feed — that teach exactly that skill in a playful, completely low-pressure way, with every single game opening in a full-screen play area for maximum comfort on any device.</p>'
++'    <p><strong>How to play:</strong> In Pop &amp; Catch games, balloons, bubbles, fish or stars float, swim or drift across the screen and children simply click to pop or catch them — there are no wrong answers here, just steady clicking practice with a satisfying pop animation every time. Find &amp; Click games scatter pictures such as animals, fruits, or Hindi letters across the screen for a child to tap one by one, hearing each one named aloud as they go. Drag &amp; Feed games ask children to click, hold, and drag an item — like a piece of fruit — across the screen into a basket or to a hungry animal such as a monkey or elephant, practising the full click-hold-move-release sequence that underlies almost all computer interaction.</p>'
++'    <p><strong>Skills developed:</strong> Fine motor control, hand-eye coordination, click accuracy, tracking moving objects visually, and the click-drag-release sequence needed for later computer, tablet and even handwriting use.</p>'
++'    <p><strong>Why children love it:</strong> Every single action succeeds — there is no way to "lose" a Mouse Practice game — so even the youngest, most hesitant first-time clicker feels instantly capable, confident, and eager to try the next one.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-hicorner"><h2>🇮🇳 हिंदी लर्निंग कॉर्नर (Hindi Learning Corner)</h2>'
++'    <p><strong>About this game:</strong> The Hindi Learning Corner sits alongside its English counterpart, offering traditional Hindi तुकबंदी (rhymes) like चंदा मामा and आलू कचालू बेटा, short कहानी (stories) with gentle morals such as ईमानदार लकड़हारा, and simple कविता (poems) about everyday joys like family, gardens and rain — all written correctly in Devanagari script and read aloud in a natural, warm Hindi voice using the same text-to-speech technology that powers the rest of the Garden.</p>'
++'    <p><strong>How to play:</strong> Children choose between Rhymes, Stories or Poems from the Corner\'s home screen, browse a gallery of titles each shown with a matching emoji, and tap any entry to open it in a large, easy-to-read pop-up with a "सुनिए" (Listen) button for full audio narration of the title and text together. Left and right arrows let a child move through the whole gallery without returning to the menu each time, making it easy to enjoy several rhymes back to back.</p>'
++'    <p><strong>Skills developed:</strong> Hindi vocabulary, listening comprehension in a home language, cultural familiarity with well-loved traditional rhymes passed down through generations, moral reasoning from the story content, and genuine bilingual confidence built by treating Hindi with the same quality and care as English throughout the site.</p>'
++'    <p><strong>Why children love it:</strong> Many of these rhymes are the very same ones grandparents and parents grew up singing — hearing them again in a colourful, tappable, read-aloud format makes the Corner an instant, nostalgic favourite for family playtime together. Parents often tell us it\'s the section they enjoy replaying just as much as their children do.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-musical"><h2>🎵 Musical Fun</h2>'
++'    <p><strong>About this game:</strong> Musical Fun turns a screen into five real instruments — piano, violin, flute, tabla and dholak — each built using genuine sound synthesis so every key or pad makes an authentic, pleasant note rather than a generic beep. The piano spans a full octave of keys, the violin and flute use gentle vibrato for a natural, breathy tone, and the tabla and dholak pads reproduce the pitched, percussive sound of real hand drums, giving children a surprisingly rich and satisfying introduction to instruments they may never otherwise get the chance to touch.</p>'
++'    <p><strong>How to play:</strong> Children simply choose an instrument from the Musical Fun menu, then tap keys or pads to play notes, switching freely between instruments to compare their sounds, and experimenting to create their own simple tunes at their own pace. There is intentionally no scoring, no "correct song" to complete, and no time pressure — this corner exists purely for open-ended musical exploration and discovery.</p>'
++'    <p><strong>Skills developed:</strong> Early musical awareness, understanding of cause and effect (a tap produces a specific, repeatable sound), a developing sense of rhythm and pitch, creative self-expression, and fine motor precision from aiming at small keys and pads.</p>'
++'    <p><strong>Why children love it:</strong> The freedom to bang out any tune they like, on instruments many children have never held in real life, combined with instantly satisfying, good-sounding notes, makes this one of the most replayed and most independently explored corners of the entire Garden. Some children treat it as their own private concert stage.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-animalgames"><h2>🐶 Animal Games</h2>'
++'    <p><strong>About this game:</strong> Animal Games is our growing collection of animal-themed activities, currently featuring Animal Sounds — a cheerful guessing game where children hear a sound like "MOO," "WOOF," "ROAR" or "QUACK" displayed as a speech bubble on screen, and must tap the animal picture they believe makes that exact sound from several options. We chose animal sounds as the flagship game for this section because guessing "who made that noise?" is one of the most natural, universally loved games young children already play instinctively, long before they ever touch a screen.</p>'
++'    <p><strong>How to play:</strong> A sound word appears in a large, friendly speech bubble at the top of the screen and is also read aloud; children then look across the animal picture options laid out below and tap the one they believe matches, with a Hint button available that highlights the correct animal if they\'ve been thinking for a while, and a happy confetti animation plus a star reward for every correct guess. Difficulty levels change how many animal options appear at once, from three simple choices up to five trickier ones.</p>'
++'    <p><strong>Skills developed:</strong> Sound-to-object association, general animal knowledge, active listening skills, vocabulary for animal names, and quick, confident decision-making under a light timer.</p>'
++'    <p><strong>Why children love it:</strong> Guessing "who said that?" taps into a game children already play naturally with parents and picture books, and the exaggerated, cheerful animal sounds reliably get a genuine giggle every single round. It\'s often the very first game a shy new visitor to the Garden feels confident enough to try alone.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-coloring"><h2>🖌️ Color Fun</h2>'
++'    <p><strong>About this game:</strong> Color Fun is a full colouring book built right into the browser, with 50 original outline pictures spread across five categories — fruits, vegetables, nature, everyday objects and animals — each one ready to be filled in with any of eighteen crayon-style colours from a bright, easy-to-reach palette. Unlike a printed colouring book, nothing here can ever be "ruined" — every mistake can be undone in a single tap, which makes this one of the calmest, most pressure-free corners of the whole Garden.</p>'
++'    <p><strong>How to play:</strong> Children pick any picture from the gallery, choose a colour from the palette along the bottom of the screen, and paint freely using a finger on a touchscreen or a mouse on a computer. A brush size slider lets them switch between broad strokes and fine detail work, an eraser tool cleans up small mistakes, and unlimited undo and redo buttons mean a child can always step backwards or forwards through their own painting history without any anxiety about getting it "wrong."</p>'
++'    <p><strong>Skills developed:</strong> Fine motor control and pencil-grip-adjacent hand movements, colour recognition and naming, creativity and personal expression, and patience with a longer, self-directed activity compared to the Garden\'s quicker quiz-style games.</p>'
++'    <p><strong>Why children love it:</strong> There is no wrong way to colour a picture here, no score, and no timer — just fifty pictures and eighteen colours waiting to be combined however a child likes, which makes this the go-to corner for calm, unhurried, creative play.</p>'
++'  </article>'
++'  <article class="content-page reveal" id="guide-mindgames2"><h2>🎨 Color Sorting</h2>'
++'    <p><strong>About this game:</strong> Color Sorting is a fast, cheerful game inside the Brain Development zone that strengthens colour-name recognition — the specific skill of connecting a spoken or written colour word to the correct shade, rather than simply recognising colours visually. A target colour name is announced aloud and shown in large text, and children must tap the correct giant colour circle from several bright, saturated options displayed on screen at once.</p>'
++'    <p><strong>How to play:</strong> Each round names a colour aloud — for example "Find the Purple colour!" — and shows several large, perfectly round colour blobs on screen; children tap the matching one before the visible countdown timer runs out, earning a star and a burst of confetti for a correct tap. Easy levels show only three colour options with clearly different shades, while Medium and Tough levels increase both the number of options and the closeness of similar shades, such as distinguishing teal from turquoise, making the challenge grow naturally as a child improves. A Hint button is always available, dimming one incorrect option if needed.</p>'
++'    <p><strong>Skills developed:</strong> Colour-word association and vocabulary, quick visual scanning and comparison, decision-making under a light time limit, and the ability to distinguish increasingly similar shades as difficulty rises.</p>'
++'    <p><strong>Why children love it:</strong> The big, bold, satisfyingly tappable colour circles combined with the quick round-by-round pace make this one of the most energetic, giggle-filled games in the entire Brain Development collection, and children often ask to "play the colour game" by name.</p>'
++'  </article>'
++'</div></section>'
++'<div class="ad-slot ad-slot-banner container" role="complementary" aria-label="Advertisement">Advertisement</div>';
+};
+
+SITE_PAGES.about = function(){
+  return ''
++'<section class="page-hero container"><h1>About Chintu\'s Learning Garden 🦊</h1><p>The story, mission and people behind the Garden.</p></section>'
++'<div class="ad-slot ad-slot-banner container" role="complementary" aria-label="Advertisement">Advertisement</div>'
++'<section class="section"><div class="container" style="max-width:820px;"><div class="content-page reveal">'
++'<h2>Our Mission</h2><p>Our mission is simple: make the first few years of learning feel like play. Chintu\'s Learning Garden exists to give every Nursery, LKG and UKG child — regardless of their family\'s budget — access to bright, engaging, genuinely educational games in both English and Hindi, without a single paywall or account sign-up standing in the way.</p>'
++'<h2>Our Vision</h2><p>We imagine a world where a two-year-old\'s first experience of a screen is not passive video-watching, but active, joyful learning — tapping, dragging, listening and answering. We want Chintu\'s Learning Garden to be the trusted first digital learning space that parents everywhere reach for, in Hindi-speaking and English-speaking households alike.</p>'
++'<h2>Our Educational Goals</h2><ul>'
++'<li>Build strong letter and number foundations before formal schooling begins.</li>'
++'<li>Support bilingual growth by treating English and Hindi as equal, connected languages rather than separate subjects.</li>'
++'<li>Develop fine motor skills and hand-eye coordination through hands-on digital play.</li>'
++'<li>Nurture memory, logic and problem-solving through age-appropriate brain games.</li>'
++'<li>Introduce emotional vocabulary, good habits and family values through gentle storytelling.</li>'
++'</ul>'
++'<h2>Why We Built Chintu\'s Learning Garden</h2><p>This project began the way most good ideas for children begin — from watching a real child learn. We noticed how quickly a toddler could recognise a cartoon character\'s face, yet how few digital tools used that same natural curiosity to teach something lasting. Most "educational" apps we found were either locked behind subscriptions, cluttered with intrusive ads aimed at children, or simply not designed with enough care for how a three-year-old actually taps, drags and processes a screen. So we built the Garden ourselves — module by module, game by game — testing every single interaction to make sure it felt obvious and satisfying to a very young child, long before we ever considered making it public.</p>'
++'<h2>Benefits for Children</h2><ul>'
++'<li>Learn at their own pace, with no grades, no pressure, and no penalty for a wrong answer.</li>'
++'<li>Hear every word read aloud, so pre-readers are never left behind.</li>'
++'<li>Explore 36+ games covering letters, numbers, Hindi, science-adjacent topics, music and art.</li>'
++'<li>Earn stars, coins and badges that celebrate effort, not just correct answers.</li>'
++'</ul>'
++'<h2>Benefits for Parents</h2><ul>'
++'<li>Complete peace of mind — no chat features, no external links inside games, no data collected from children.</li>'
++'<li>A genuinely free resource, with no subscription, trial period or in-app purchases.</li>'
++'<li>Bilingual content that supports Hindi-speaking households without translation gaps.</li>'
++'<li>Short, self-contained games that fit naturally into any part of the day.</li>'
++'</ul>'
++'</div></div></section>'
++'<div class="ad-slot ad-slot-incontent container" role="complementary" aria-label="Advertisement">Advertisement</div>';
+};
+
+SITE_PAGES.contact = function(){
+  return ''
++'<section class="page-hero container"><h1>Get in Touch</h1><p>Questions, feedback or a game idea from your little one? We\'d love to hear it.</p></section>'
++'<section class="section"><div class="container contact-grid">'
++'  <div class="reveal">'
++'    <div id="cf-success" class="form-success" tabindex="-1">✅ Thank you! Your message has been received. (This is a demo form — no data is sent anywhere.)</div>'
++'    <form id="contactForm" novalidate>'
++'      <div class="form-field" id="cf-name-field"><label for="cf-name">Your Name</label><input type="text" id="cf-name" name="name" placeholder="e.g. Priya Sharma" required aria-required="true"><span class="form-error">Please enter your name (at least 2 characters).</span></div>'
++'      <div class="form-field" id="cf-email-field"><label for="cf-email">Your Email</label><input type="email" id="cf-email" name="email" placeholder="you@example.com" required aria-required="true"><span class="form-error">Please enter a valid email address.</span></div>'
++'      <div class="form-field" id="cf-message-field"><label for="cf-message">Your Message</label><textarea id="cf-message" name="message" rows="6" placeholder="Tell us what\'s on your mind..." required aria-required="true"></textarea><span class="form-error">Please enter a message of at least 10 characters.</span></div>'
++'      <button type="submit" class="btn btn-primary btn-block">✉️ Send Message</button>'
++'    </form>'
++'  </div>'
++'  <div class="card contact-info-card reveal">'
++'    <h2 style="color:var(--purple);font-size:20px;">Other Ways to Reach Us</h2>'
++'    <div class="contact-info-item"><div class="contact-info-ic" aria-hidden="true">✉️</div><div><strong>Email</strong><p style="margin:2px 0 0;"><a href="mailto:hello@chintuslearninggarden.com">hello@chintuslearninggarden.com</a></p></div></div>'
++'    <div class="contact-info-item"><div class="contact-info-ic" aria-hidden="true">⏱️</div><div><strong>Response Time</strong><p style="margin:2px 0 0;">We typically reply within 2-3 business days.</p></div></div>'
++'    <div class="contact-info-item"><div class="contact-info-ic" aria-hidden="true">💡</div><div><strong>Game Suggestions</strong><p style="margin:2px 0 0;">Tell us which game your child loves most, or what you\'d like to see next!</p></div></div>'
++'    <div class="ad-slot ad-slot-sidebar" role="complementary" aria-label="Advertisement" style="margin-top:20px;">Advertisement</div>'
++'  </div>'
++'</div></section>';
+};
+
+SITE_PAGES.privacy = function(){
+  return ''
++'<section class="page-hero container"><h1>Privacy Policy</h1><p>Last updated: July 2026</p></section>'
++'<section class="section"><div class="container content-page" style="max-width:820px;">'
++'<p>Chintu\'s Learning Garden ("we", "us", "our") operates this website to provide free educational games for children, with content intended to be enjoyed by children under parental or guardian supervision. This Privacy Policy explains what information is collected when you visit our site, how it is used, and the choices available to you. By using this website, you agree to the terms described here.</p>'
++'<h2>1. Information Collection</h2><p>Chintu\'s Learning Garden does not require account creation, login, or the submission of any personal information to play our games. We do not knowingly collect names, addresses, phone numbers, or any other personally identifiable information directly from children. The Contact page on this site includes an optional form where a visitor (intended to be a parent or guardian) may voluntarily submit a name, email address and message; this information is used solely to respond to the enquiry and is not sold or shared with third parties.</p>'
++'<h2>2. Children\'s Privacy</h2><p>Protecting children\'s privacy is a foundational principle of this website. We do not knowingly collect personal information from children under 13 in a manner that would identify them individually. Our games are designed to be played without any sign-up, profile creation, or entry of personal details. If we become aware that personal information has been inadvertently collected from a child without appropriate consent, we will take steps to delete that information promptly. Parents and guardians who believe their child may have provided personal information through this site are welcome to contact us using the details below.</p>'
++'<h2>3. Cookies</h2><p>Cookies are small text files stored on your device by your web browser. This website may use cookies to remember basic preferences (such as your selected language) and to support the analytics and advertising services described below. You can control or disable cookies at any time through your browser settings; disabling cookies will not prevent you from playing the games on this site, though some preferences may not be remembered between visits.</p>'
++'<h2>4. Analytics</h2><p>We may use website analytics services (such as Google Analytics) to understand, in aggregate and anonymised form, how visitors use this site — for example, which pages and games are most popular. This data helps us improve the website and is not used to identify individual children. Analytics services may use cookies or similar technologies to collect this information in accordance with their own privacy policies.</p>'
++'<h2>5. Google AdSense &amp; Advertising</h2><p>This website may display advertisements served by Google AdSense and other third-party advertising networks. These providers may use cookies, device identifiers, or similar technologies to serve ads based on your prior visits to this or other websites. Google\'s use of advertising cookies enables it and its partners to serve ads based on your visit to this site and/or other sites on the internet.</p>'
++'<p>You may opt out of personalised advertising by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Google\'s Ads Settings</a>, or by visiting <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer">www.aboutads.info</a> to opt out of participating third-party vendors\' use of cookies for personalised advertising. In accordance with applicable advertising guidelines for child-directed content, we take care to configure advertising on this site appropriately for a young audience.</p>'
++'<h2>6. Third-Party Services</h2><p>This website may link to or embed content from third-party services (such as font providers or video hosts). These third parties operate under their own privacy policies, and we encourage you to review them. We select third-party services with care but are not responsible for their independent privacy practices.</p>'
++'<h2>7. Data Security</h2><p>We take reasonable measures to protect any information submitted through this website (such as through the Contact form) from unauthorised access, alteration, or disclosure. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>'
++'<h2>8. Changes to This Policy</h2><p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal or regulatory reasons. Any changes will be posted on this page with an updated "Last updated" date. We encourage you to review this page periodically.</p>'
++'<h2>9. Contact Information</h2><p>If you have any questions about this Privacy Policy or how this website handles information, please contact us at <a href="mailto:hello@chintuslearninggarden.com">hello@chintuslearninggarden.com</a> or via our <a href="#" onclick="return siteGo(\'contact\')">Contact page</a>.</p>'
++'</div></section>';
+};
+
+SITE_PAGES.terms = function(){
+  return ''
++'<section class="page-hero container"><h1>Terms of Use</h1><p>Last updated: July 2026</p></section>'
++'<section class="section"><div class="container content-page" style="max-width:820px;">'
++'<p>Welcome to Chintu\'s Learning Garden. These Terms of Use ("Terms") govern your access to and use of this website and its games. By using this site, you agree to these Terms on behalf of yourself and, where applicable, the child in your care. If you do not agree with these Terms, please do not use this website.</p>'
++'<h2>1. Usage Rules</h2><p>Chintu\'s Learning Garden is provided free of charge for personal, non-commercial, educational and entertainment use. You may use this website to play games, read stories, and access learning content for yourself or a child in your care. You may not use automated tools to scrape, copy, or republish content from this site, attempt to disrupt or overload our servers, or use the website for any unlawful purpose.</p>'
++'<h2>2. Disclaimer</h2><p>This website and its games are provided "as is" and "as available," without warranties of any kind, express or implied. While we make every effort to keep games accurate, functional and age-appropriate, we do not guarantee that the website will be error-free, uninterrupted, or suitable for every device or browser. Educational content on this site is intended to supplement, not replace, formal education or professional guidance.</p>'
++'<h2>3. Copyright</h2><p>All original content on this website — including but not limited to game designs, illustrations, written stories, poems, code, and layout — is the property of Chintu\'s Learning Garden unless otherwise stated, and is protected by applicable copyright law. You may not reproduce, distribute, or create derivative works from this content without our prior written permission, except for personal, non-commercial use.</p>'
++'<h2>4. Intellectual Property</h2><p>The name "Chintu\'s Learning Garden," associated logos, and the distinctive design of our games are the intellectual property of their respective owners. Nothing in these Terms grants you any right or licence to use our trademarks, branding, or intellectual property except as necessary to use the website in the ordinary course of play.</p>'
++'<h2>5. User Responsibilities</h2><p>Parents and guardians are responsible for supervising their child\'s use of this website in a manner they consider appropriate for their child\'s age and needs. You are responsible for ensuring that any device used to access this site is suitably configured (for example, with appropriate parental controls) for your child\'s independent use, where applicable.</p>'
++'<h2>6. Third-Party Advertising</h2><p>This website may display advertisements from third-party networks, including Google AdSense, to help support the free availability of our content. We do not control the specific content of third-party advertisements and are not responsible for the products, services, or websites they may promote. Please refer to our <a href="#" onclick="return siteGo(\'privacy\')">Privacy Policy</a> for more information about advertising on this site.</p>'
++'<h2>7. Limitation of Liability</h2><p>To the fullest extent permitted by law, Chintu\'s Learning Garden shall not be liable for any indirect, incidental, or consequential damages arising from your use of, or inability to use, this website.</p>'
++'<h2>8. Changes to These Terms</h2><p>We may revise these Terms of Use at any time by updating this page. Continued use of the website after changes are posted constitutes your acceptance of the revised Terms. We encourage you to review this page periodically.</p>'
++'<h2>9. Contact Information</h2><p>If you have questions about these Terms of Use, please reach out via our <a href="#" onclick="return siteGo(\'contact\')">Contact page</a> or email <a href="mailto:hello@chintuslearninggarden.com">hello@chintuslearninggarden.com</a>.</p>'
++'</div></section>';
+};
+
+function bindSitePageScripts(page){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    if(!q) return;
+    q.addEventListener('click', function(){
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+  var els = document.querySelectorAll('.reveal');
+  if(els.length){
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('in-view'); ro.unobserve(entry.target); } });
+    }, {threshold:.15});
+    els.forEach(function(el){ ro.observe(el); });
+  }
+  var counters = document.querySelectorAll('.js-counter');
+  if(counters.length){
+    var cobs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          var target = parseFloat(el.dataset.target);
+          var suffix = el.dataset.suffix || '';
+          var duration = 1200, startTime = null;
+          function step(ts){
+            if(!startTime) startTime = ts;
+            var progress = Math.min((ts - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(target * eased).toLocaleString('en-IN') + suffix;
+            if(progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          cobs.unobserve(el);
+        }
+      });
+    }, {threshold:.4});
+    counters.forEach(function(el){ cobs.observe(el); });
+  }
+  var form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var valid = true;
+      var nameField = document.getElementById('cf-name-field');
+      var nameInput = document.getElementById('cf-name');
+      if(nameInput.value.trim().length < 2){ nameField.classList.add('invalid'); valid = false; } else { nameField.classList.remove('invalid'); }
+      var emailField = document.getElementById('cf-email-field');
+      var emailInput = document.getElementById('cf-email');
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailPattern.test(emailInput.value.trim())){ emailField.classList.add('invalid'); valid = false; } else { emailField.classList.remove('invalid'); }
+      var msgField = document.getElementById('cf-message-field');
+      var msgInput = document.getElementById('cf-message');
+      if(msgInput.value.trim().length < 10){ msgField.classList.add('invalid'); valid = false; } else { msgField.classList.remove('invalid'); }
+      var successBox = document.getElementById('cf-success');
+      if(valid){
+        form.reset();
+        successBox.classList.add('show');
+        setTimeout(function(){ successBox.classList.remove('show'); }, 6000);
+      } else {
+        successBox.classList.remove('show');
+        var firstInvalid = form.querySelector('.invalid input, .invalid textarea');
+        if(firstInvalid) firstInvalid.focus();
+      }
+    });
+  }
+}
+
+siteRender();
+
 </script>
 </body>
 </html>
